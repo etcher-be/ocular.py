@@ -11,6 +11,7 @@ class CoverageParser:
         coverage_data.load()
 
         xml_report_file = tempfile.NamedTemporaryFile()
+        xml_report_file.close()
         coverage_data.xml_report(outfile=xml_report_file.name)
         xml_report = open(xml_report_file.name).read()
         xml_report_file.close()
